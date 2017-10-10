@@ -1,7 +1,5 @@
-setenv bootargs console=ttyS0,115200 earlyprintk root=/dev/mmcblk0p2 rootwait
-
-mmc dev 0
-fatload mmc 0 $kernel_addr_r zImage
-fatload mmc 0 $fdt_addr_r sun5i-gr8-chip-pro.dtb
-
-bootz $kernel_addr_r - $fdt_addr_r
+nand erase.chip
+mw ${scriptaddr} 0x0
+sleep 4
+fastboot 0
+reset
