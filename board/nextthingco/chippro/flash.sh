@@ -9,10 +9,6 @@ sunxi-fel write 0x43100000 boot.scr
 sunxi-fel exe 0x4a000000
 sleep 8
 
-fastboot -i 0x1f3a erase uboot
-fastboot -i 0x1f3a erase uboot-backup
-fastboot -i 0x1f3a erase UBI
-
 fastboot -i 0x1f3a flash uboot u-boot.bin
 fastboot -i 0x1f3a flash uboot-backup u-boot.bin
 fastboot -i 0x1f3a flash UBI rootfs.ubi.sparse
